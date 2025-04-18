@@ -1,0 +1,59 @@
+---
+title: "soloproject"
+format: html
+---
+
+```{r}
+library(tidyverse)
+shark_attack_data <- read_tsv("data/locdat2.txt")
+problems(shark_attack_data)
+```
+
+
+```{r}
+library(rnaturalearth)
+australia_shapes <- ne_states(
+  country = "Australia",
+  returnclass = c("sf")
+)
+
+
+```
+
+This map shows the density of shark attacks in different Australian states from 1791-2022. The more red, the state, the higher density of shark attacks that occured. From this chloropleth map we can see that the main hotspot for shark attacks in Australia occurs on the eastern coast. Could this be because the an abundance of wildlife from marine hotspots such as the great barrier reef that attracts a large number of sharks? I think that the reason for the highest density of shark attacks being on the eastern coast is because that is where the greatest number of people live. The higher density of people, the more people who get attacked by sharks. 
+
+
+```{r}
+australia_shapes <- australia_shapes |>
+  mutate(iso_3166_2 = str_replace(iso_3166_2, "AU-", "")) |>
+  filter(iso_3166_2 != "X03~", iso_3166_2 != "X02~") |>
+  filter(adm1_code != "AUS-2659", adm1_code != "AUS-2653") |>
+  select(iso_3166_2, geometry)
+
+```
+
+```{r}
+state_shark_attacks <- shark_attack_data |>
+ count(State) |>
+  filter(!is.na(State))
+```
+
+```{r}
+final_data_set <- australia_shapes |>
+   left_join(state_shark_attacks, join_by(iso_3166_2 == State))
+```
+
+```{r}
+ggplot() +
+  geom_sf(data = final_data_set,
+          aes(fill = n)) +
+  scale_fill_gradient( low = "red", high = "blue", trans = "reverse") +
+ 
+ labs(
+    fill = "# of shark attacks",
+    title = "shark attack density per state 1791-2022"
+  )
+```
+
+
+This map shows the density of shark attacks in different Australian states from 1791-2022. The more red, the state, the higher density of shark attacks that occured. From this chloropleth map we can see that the main hotspot for shark attacks in Australia occurs on the eastern coast. Could this be because the an abundance of wildlife from marine hotspots such as the great barrier reef that attracts a large number of sharks? I think that the reason for the highest density of shark attacks being on the eastern coast is because that is where the greatest number of people live. The higher density of people, the more people who get attacked by sharks. 

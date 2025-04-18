@@ -1,5 +1,53 @@
 ---
 title: "Quadvariate Viz"
 ---
+```{r}
+library(tidyverse)
+```
+
+```{r}
+tuesdata <- tidytuesdayR::tt_load(2025, week = 10)
+
+pixar_films <- tuesdata$pixar_films
+public_response <- tuesdata$public_response
+
+```
+
+
+```{r}
+pixar_dataset <- pixar_films |>
+  left_join(public_response, by = "film") |>
+  select(-number)
+
+
+```
+
+
+```{r}
+
+clean_pixar_dataset <- pixar_dataset |>
+  drop_na()
+
+rating_data <- clean_pixar_dataset |>
+  select(film, rotten_tomatoes, metacritic, critics_choice) |>
+  pivot_longer(cols = -film, names_to = "rating_source", values_to = "score")
+
+```
+
+```{r}
+#| fig-alt: "How do different film critics differ in scores when rating the same pixar films?"
+rating_data |>
+  ggplot(aes(x= rating_source, y= score, fill= film, color = rating_source )) +
+  geom_boxplot(alpha = 0.8) +
+  labs(
+    title = "Pixar Films: Rating source comparison",
+    x = "Rating Source",
+    y = "Score",
+    caption = "How do different film critics differ in scores when rating the same pixar films?"
+  ) +
+  scale_fill_viridis_d()
+
+```
+
 
 Use this file to generate a professional looking **quadvariate** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.

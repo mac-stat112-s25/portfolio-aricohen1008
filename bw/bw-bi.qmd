@@ -2,4 +2,39 @@
 title: "Bivariate Viz"
 ---
 
+---
+title: "Ari C"
+format: html
+
+```{r}
+library(tidyverse)
+
+library(shiny)
+
+library(tibble)
+
+```
+
+
+```{r}
+unemployment_data <- read_csv("~/Documents/Brazil-Unemployment-Rate-Unemployment-Rate-2025-04-16-11-18.csv") |>
+  slice_head(n = 30) |>
+  slice_tail(n = 11) |>
+  rename(Year = ...1)
+ 
+```
+
+```{r}
+#| fig-alt: "Unemployment rate in Brazil (2010-2020)"
+
+ggplot(unemployment_data, aes(x = Year, y= `Unemployment Rate`, fill = `Unemployment Rate`)) +
+  geom_bar(stat = "identity") +
+  scale_x_continuous(breaks = c(2010:2020)) +
+  labs(
+    title = "Unemployment rate in Brazil (2010-2020)" ,
+    caption = "Amount of people who are looking for work but unemployed"
+     ) +
+    scale_fill_viridis_c()
+```
+
 Use this file to generate a professional looking **bivariate** visualization.  The visualization will not perfect the first time but you are expected to improve it throughout the semester especially after covering advanced topics such as effective viz.

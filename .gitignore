@@ -11,3 +11,5 @@
 /site_libs
 *.html
 _freeze/
+data/ASGS_2021_MAIN_STRUCTURE_GPKG_GDA2020.zip
+data/ASGS_2021_MAIN_STRUCTURE_GPKG_GDA2020/ASGS_2021_Main_Structure_GDA2020.gpkg

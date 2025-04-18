@@ -1,0 +1,55 @@
+---
+title: "soloproject"
+format: html
+---
+
+```{r}
+library(tidyverse)
+shark_attack_data <- read_tsv("data/locdat2.txt")
+problems(shark_attack_data)
+```
+
+
+```{r}
+library(rnaturalearth)
+australia_shapes <- ne_states(
+  country = "Australia",
+  returnclass = c("sf")
+)
+
+
+```
+
+```{r}
+ggplot() +
+  geom_sf(data = final_data_set,
+          aes(fill = n)) +
+  scale_fill_gradient( low = "red", high = "blue", trans = "reverse") +
+ 
+ labs(
+    fill = "# of shark attacks",
+    title = "shark attack density per state 1791-2022"
+  )
+```
+
+```{r}
+australia_shapes <- australia_shapes |>
+  mutate(iso_3166_2 = str_replace(iso_3166_2, "AU-", "")) |>
+  filter(iso_3166_2 != "X03~", iso_3166_2 != "X02~") |>
+  filter(adm1_code != "AUS-2659", adm1_code != "AUS-2653") |>
+  select(iso_3166_2, geometry)
+
+```
+
+```{r}
+state_shark_attacks <- shark_attack_data |>
+ count(State) |>
+  filter(!is.na(State))
+```
+
+```{r}
+final_data_set <- australia_shapes |>
+   left_join(state_shark_attacks, join_by(iso_3166_2 == State))
+```
+
+

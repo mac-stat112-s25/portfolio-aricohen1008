@@ -1,5 +1,25 @@
 ---
 title: "Univariate Viz"
 ---
+```{r}
+library(tidyverse)
+```
+
+
+```{r}
+#| fig-alt: "Measuring hikes using elevation"
+
+hikes <- read.csv("https://mac-stat.github.io/data/high_peaks.csv")
+
+ggplot(hikes, aes(x = elevation)) +
+ geom_density(color = "blue", fill = "orange") +
+  labs(
+     title = "Measuring hikes using elevation" ,
+    caption = "Looking at the density of hikes using elevation as a variable"
+     ) +
+    scale_fill_viridis_c()
+  
+```
+
 
 Use this file to generate a professional looking **univariate** visualization. The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.

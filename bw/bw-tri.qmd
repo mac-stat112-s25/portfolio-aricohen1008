@@ -1,5 +1,31 @@
 ---
 title: "Trivariate Viz"
 ---
+```{r}
+library(tidyverse)
+```
+
+```{r}
+agencies <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-02-18/agencies.csv')
+```
+
+```{r}
+#| fig-alt: "Does the location of a law enforcement agency determine whether or not they are part of the FBI program?"
+
+ggplot(agencies, aes(x=longitude, y= latitude, color = is_nibrs))+
+  geom_point()+
+  facet_wrap(~is_nibrs) + 
+  scale_x_continuous(limits = c(-200, 0))+
+  labs(
+    x = "Longitude",
+    y= "Latitude",
+    title = "Law Enforcement Agencies Part of Program",
+    caption = "Does the location of a law enforcement agency determine whether or not they are part of the FBI program?",
+    color = "Part of program"
+  )+
+  scale_color_viridis_d()
+
+```
+
 
 Use this file to generate a professional looking **trivariate** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
