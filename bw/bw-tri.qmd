@@ -20,12 +20,13 @@ ggplot(agencies, aes(x=longitude, y= latitude, color = is_nibrs))+
     x = "Longitude",
     y= "Latitude",
     title = "Law Enforcement Agencies Part of Program",
-    caption = "Does the location of a law enforcement agency determine whether or not they are part of the FBI program?",
+    caption = "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/docApi",
     color = "Part of program"
   )+
-  scale_color_viridis_d()
+  scale_color_viridis_d() +
+  theme_minimal()
 
 ```
 
 
-Use this file to generate a professional looking **trivariate** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
+

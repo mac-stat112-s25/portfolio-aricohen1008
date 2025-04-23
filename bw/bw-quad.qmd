@@ -37,19 +37,18 @@ rating_data <- clean_pixar_dataset |>
 ```{r}
 #| fig-alt: "How do different film critics differ in scores when rating the same pixar films?"
 rating_data |>
-  ggplot(aes(x= rating_source, y= score, group = film, color= score, fill= film)) +
-  geom_line(aes(alpha = score), alpha = 0.5) +
+  ggplot(aes(x= rating_source, y= score, group = film)) +
+  geom_line(aes(color = film)) +
   geom_point(aes(fill = film), shape = 21, color = "black", size = 1.5) +
-  scale_color_gradient(low = "red", high = "blue", name = "score") +
   labs(
-    title = "Pixar Films: Rating source comparison",
+    title = "Pixar Films: Rating source comparison (out of 100)",
     x = "Rating Source",
     y = "Score",
-    caption = "How do different film critics differ in scores when rating the same pixar films?"
+    caption = "https://en.wikipedia.org/wiki/List_of_Pixar_films"
   ) +
   theme_minimal()
 
 ```
 
 
-Use this file to generate a professional looking **quadvariate** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
+

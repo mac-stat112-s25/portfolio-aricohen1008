@@ -49,6 +49,8 @@ ggplot() +
  
  labs(
     fill = "# of shark attacks",
-    title = "shark attack density per state 1791-2022"
-  )
+    title = "Shark attack density per state 1791-2022",
+    caption = "https://github.com/cjabradshaw/AustralianSharkIncidentDatabase"
+  ) +
+  theme_minimal()
 ```

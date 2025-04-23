@@ -29,9 +29,9 @@ ggplot(unemployment_data, aes(x = Year, y= `Unemployment Rate`, fill = `Unemploy
   scale_x_continuous(breaks = c(2010:2020)) +
   labs(
     title = "Unemployment rate in Brazil (2010-2020)" ,
-    caption = "Amount of people who are looking for work but unemployed"
+    caption = "Retrieved from FRED, Federal Reserve Bank of St. Louis"
      ) +
-    scale_fill_viridis_c()
+    scale_fill_viridis_c() +
+  theme_minimal()
 ```
 
-Use this file to generate a professional looking **bivariate** visualization.  The visualization will not perfect the first time but you are expected to improve it throughout the semester especially after covering advanced topics such as effective viz.

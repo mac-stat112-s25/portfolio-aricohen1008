@@ -37,9 +37,9 @@ ggplot(cma_boundaries) +
   coord_sf(xlim = c(-179.14, -50), ylim = c(14.54, 83.11)) +
   labs(
     title = "Density of Starbucks in North America",
-    caption = "Concentration of starbucks stores in North America"
+    caption = "https://mac-stat.github.io/data/starbucks.csv"
   ) +
-  scale_fill_viridis_c()
+  scale_fill_viridis_c() +
+  theme_minimal()
 ```
 
-Use this file to generate a professional looking **spatial** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
