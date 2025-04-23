@@ -2,9 +2,6 @@
 title: "Bivariate Viz"
 ---
 
----
-title: "Ari C"
-format: html
 
 ```{r}
 library(tidyverse)

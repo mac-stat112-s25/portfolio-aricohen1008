@@ -37,15 +37,17 @@ rating_data <- clean_pixar_dataset |>
 ```{r}
 #| fig-alt: "How do different film critics differ in scores when rating the same pixar films?"
 rating_data |>
-  ggplot(aes(x= rating_source, y= score, fill= film, color = rating_source )) +
-  geom_boxplot(alpha = 0.8) +
+  ggplot(aes(x= rating_source, y= score, group = film, color= score, fill= film)) +
+  geom_line(aes(alpha = score), alpha = 0.5) +
+  geom_point(aes(fill = film), shape = 21, color = "black", size = 1.5) +
+  scale_color_gradient(low = "red", high = "blue", name = "score") +
   labs(
     title = "Pixar Films: Rating source comparison",
     x = "Rating Source",
     y = "Score",
     caption = "How do different film critics differ in scores when rating the same pixar films?"
   ) +
-  scale_fill_viridis_d()
+  theme_minimal()
 
 ```
 
