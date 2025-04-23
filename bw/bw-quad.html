@@ -241,17 +241,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell">
 <details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>rating_data <span class="sc">|&gt;</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span> rating_source, <span class="at">y=</span> score, <span class="at">group =</span> film, <span class="at">color=</span> score, <span class="at">fill=</span> film)) <span class="sc">+</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">alpha =</span> score), <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span> rating_source, <span class="at">y=</span> score, <span class="at">group =</span> film)) <span class="sc">+</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> film)) <span class="sc">+</span></span>
 <span id="cb5-4"><a href="#cb5-4"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">fill =</span> film), <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">size =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low =</span> <span class="st">"red"</span>, <span class="at">high =</span> <span class="st">"blue"</span>, <span class="at">name =</span> <span class="st">"score"</span>) <span class="sc">+</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a>  <span class="fu">labs</span>(</span>
-<span id="cb5-7"><a href="#cb5-7"></a>    <span class="at">title =</span> <span class="st">"Pixar Films: Rating source comparison"</span>,</span>
-<span id="cb5-8"><a href="#cb5-8"></a>    <span class="at">x =</span> <span class="st">"Rating Source"</span>,</span>
-<span id="cb5-9"><a href="#cb5-9"></a>    <span class="at">y =</span> <span class="st">"Score"</span>,</span>
-<span id="cb5-10"><a href="#cb5-10"></a>    <span class="at">caption =</span> <span class="st">"How do different film critics differ in scores when rating the same pixar films?"</span></span>
-<span id="cb5-11"><a href="#cb5-11"></a>  ) <span class="sc">+</span></span>
-<span id="cb5-12"><a href="#cb5-12"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-5"><a href="#cb5-5"></a>  <span class="fu">labs</span>(</span>
+<span id="cb5-6"><a href="#cb5-6"></a>    <span class="at">title =</span> <span class="st">"Pixar Films: Rating source comparison (out of 100)"</span>,</span>
+<span id="cb5-7"><a href="#cb5-7"></a>    <span class="at">x =</span> <span class="st">"Rating Source"</span>,</span>
+<span id="cb5-8"><a href="#cb5-8"></a>    <span class="at">y =</span> <span class="st">"Score"</span>,</span>
+<span id="cb5-9"><a href="#cb5-9"></a>    <span class="at">caption =</span> <span class="st">"https://en.wikipedia.org/wiki/List_of_Pixar_films"</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a>  ) <span class="sc">+</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="bw-quad_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" alt="How do different film critics differ in scores when rating the same pixar films?" width="672"></p>
@@ -932,21 +931,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb6-46"><a href="#cb6-46"></a><span class="in">```{r}</span></span>
 <span id="cb6-47"><a href="#cb6-47"></a><span class="co">#| fig-alt: "How do different film critics differ in scores when rating the same pixar films?"</span></span>
 <span id="cb6-48"><a href="#cb6-48"></a>rating_data <span class="sc">|&gt;</span></span>
-<span id="cb6-49"><a href="#cb6-49"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span> rating_source, <span class="at">y=</span> score, <span class="at">group =</span> film, <span class="at">color=</span> score, <span class="at">fill=</span> film)) <span class="sc">+</span></span>
-<span id="cb6-50"><a href="#cb6-50"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">alpha =</span> score), <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb6-49"><a href="#cb6-49"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span> rating_source, <span class="at">y=</span> score, <span class="at">group =</span> film)) <span class="sc">+</span></span>
+<span id="cb6-50"><a href="#cb6-50"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> film)) <span class="sc">+</span></span>
 <span id="cb6-51"><a href="#cb6-51"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">fill =</span> film), <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">size =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
-<span id="cb6-52"><a href="#cb6-52"></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low =</span> <span class="st">"red"</span>, <span class="at">high =</span> <span class="st">"blue"</span>, <span class="at">name =</span> <span class="st">"score"</span>) <span class="sc">+</span></span>
-<span id="cb6-53"><a href="#cb6-53"></a>  <span class="fu">labs</span>(</span>
-<span id="cb6-54"><a href="#cb6-54"></a>    <span class="at">title =</span> <span class="st">"Pixar Films: Rating source comparison"</span>,</span>
-<span id="cb6-55"><a href="#cb6-55"></a>    <span class="at">x =</span> <span class="st">"Rating Source"</span>,</span>
-<span id="cb6-56"><a href="#cb6-56"></a>    <span class="at">y =</span> <span class="st">"Score"</span>,</span>
-<span id="cb6-57"><a href="#cb6-57"></a>    <span class="at">caption =</span> <span class="st">"How do different film critics differ in scores when rating the same pixar films?"</span></span>
-<span id="cb6-58"><a href="#cb6-58"></a>  ) <span class="sc">+</span></span>
-<span id="cb6-59"><a href="#cb6-59"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb6-60"><a href="#cb6-60"></a></span>
-<span id="cb6-61"><a href="#cb6-61"></a><span class="in">```</span></span>
+<span id="cb6-52"><a href="#cb6-52"></a>  <span class="fu">labs</span>(</span>
+<span id="cb6-53"><a href="#cb6-53"></a>    <span class="at">title =</span> <span class="st">"Pixar Films: Rating source comparison (out of 100)"</span>,</span>
+<span id="cb6-54"><a href="#cb6-54"></a>    <span class="at">x =</span> <span class="st">"Rating Source"</span>,</span>
+<span id="cb6-55"><a href="#cb6-55"></a>    <span class="at">y =</span> <span class="st">"Score"</span>,</span>
+<span id="cb6-56"><a href="#cb6-56"></a>    <span class="at">caption =</span> <span class="st">"https://en.wikipedia.org/wiki/List_of_Pixar_films"</span></span>
+<span id="cb6-57"><a href="#cb6-57"></a>  ) <span class="sc">+</span></span>
+<span id="cb6-58"><a href="#cb6-58"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb6-59"><a href="#cb6-59"></a></span>
+<span id="cb6-60"><a href="#cb6-60"></a><span class="in">```</span></span>
+<span id="cb6-61"><a href="#cb6-61"></a></span>
 <span id="cb6-62"><a href="#cb6-62"></a></span>
-<span id="cb6-63"><a href="#cb6-63"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
