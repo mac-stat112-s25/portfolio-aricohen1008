@@ -44,7 +44,7 @@ rating_data |>
     title = "Pixar Films: Rating source comparison (out of 100)",
     x = "Rating Source",
     y = "Score",
-    caption = "https://en.wikipedia.org/wiki/List_of_Pixar_films"
+    caption = "Source: wikipedia.org/wiki/List_of_Pixar_films"
   ) +
   theme_minimal()
 

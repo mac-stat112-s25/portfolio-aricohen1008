@@ -37,9 +37,9 @@ ggplot(cma_boundaries) +
   coord_sf(xlim = c(-179.14, -50), ylim = c(14.54, 83.11)) +
   labs(
     title = "Density of Starbucks in North America",
-    caption = "https://mac-stat.github.io/data/starbucks.csv"
+    caption = "Source: mac-stat.github.io/data/starbucks.csv"
   ) +
   scale_fill_viridis_c() +
-  theme_minimal()
+  theme_void()
 ```
 

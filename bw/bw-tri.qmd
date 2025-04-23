@@ -20,11 +20,11 @@ ggplot(agencies, aes(x=longitude, y= latitude, color = is_nibrs))+
     x = "Longitude",
     y= "Latitude",
     title = "Law Enforcement Agencies Part of Program",
-    caption = "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/docApi",
+    caption = "Source: cde.ucr.cjis.gov/LATEST/webapp/#/pages/docApi",
     color = "Part of program"
   )+
   scale_color_viridis_d() +
-  theme_minimal()
+  theme_void()
 
 ```
 

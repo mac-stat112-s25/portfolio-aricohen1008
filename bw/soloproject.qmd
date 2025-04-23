@@ -48,9 +48,9 @@ ggplot() +
   scale_fill_gradient( low = "red", high = "blue", trans = "reverse") +
  
  labs(
-    fill = "# of shark attacks",
-    title = "Shark attack density per state 1791-2022",
-    caption = "https://github.com/cjabradshaw/AustralianSharkIncidentDatabase"
+    fill = "",
+    title = "# of shark attacks per state 1791-2022",
+    caption = "Source: github.com/cjabradshaw/AustralianSharkIncidentDatabase"
   ) +
-  theme_minimal()
+  theme_void()
 ```

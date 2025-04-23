@@ -15,7 +15,7 @@ ggplot(hikes, aes(x = elevation)) +
  geom_density(color = "blue", fill = "orange") +
   labs(
      title = "Measuring hikes using elevation" ,
-    caption = "https://mac-stat.github.io/data/high_peaks.csv"
+    caption = "Source: mac-stat.github.io/data/high_peaks.csv"
      ) +
     scale_fill_viridis_c() +
   theme_minimal()
