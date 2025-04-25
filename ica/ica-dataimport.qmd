@@ -225,7 +225,7 @@ On your laptop:
 
 ```{r}
 library(tidyverse) 
-imbd_5000_messy <- read_csv("~/Downloads/imdb_5000_messy.csv")
+# imbd_5000_messy <- read_csv("~/Downloads/imdb_5000_messy.csv")
 ```
 
 

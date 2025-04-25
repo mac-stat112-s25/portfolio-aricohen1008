@@ -308,6 +308,14 @@ ggplot(weather, aes(x = temp3pm, fill = location)) +
 ### Example 3 {-}
 
 ```{r}
+# Don't worry about the syntax (we'll learn it soon)
+woll <- weather |>
+  filter(location == "Wollongong") |> 
+  mutate(date = as.Date(date))  
+```
+
+
+```{r}
 # How often does it raintoday?
 # Fill your geometric layer with the color blue.
 ggplot(woll, aes(x = raintoday)) + 

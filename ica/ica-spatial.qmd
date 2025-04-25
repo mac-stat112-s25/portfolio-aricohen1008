@@ -210,7 +210,6 @@ Let's load [the data](../data/our_fave_places.csv) and map it!
 
 
 ```{r}
-#| eval: false
 
 fave_places <- read.csv("https://hash-mac.github.io/stat112site-s25/data/our_fave_places.csv")
 
