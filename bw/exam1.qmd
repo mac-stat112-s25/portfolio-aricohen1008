@@ -1,0 +1,38 @@
+---
+title: "exam1"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(tidytuesdayR)
+```
+
+```{r}
+tuesdata <- tt_load('2020-02-18')
+fc <- tuesdata$food_consumption
+
+str(fc) 
+
+```
+
+```{r}
+#| fig-height: 22
+#| fig-width: 11
+
+#| fig-alt: "Food consumption by country"
+
+ggplot(fc, aes(x= consumption, y =country, fill = food_category)) +
+  geom_bar(stat = "identity") +
+  labs(
+    title = "Food consumption by country",
+    fill = "Food Category",
+    x = "Consumption",
+    y = "Country",
+    caption = "Retrieved from Tidy Tuesday"
+  ) +
+  scale_fill_viridis_d() +
+  theme_minimal()
+
+```
+
