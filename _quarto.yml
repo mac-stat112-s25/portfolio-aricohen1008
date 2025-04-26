@@ -31,6 +31,9 @@ book:
       - bw/bw-quad.qmd
       - bw/bw-spatial.qmd
       - bw/soloproject.qmd
+      - bw/exam1.qmd
+      - bw/exam2.qmd
+      - bww/examcheatsheet.qmd
 
 
     - part: "In-class Activities"

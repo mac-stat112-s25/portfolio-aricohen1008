@@ -1,15 +1,16 @@
 ---
 title: "exam2"
-format: html
----
 
 execute:
-echo: true
-warning: false
+  echo: true
+  warning: false
+  error: false
 
 format: 
-html:
-code-fold: true
+  html:
+    code-fold: true
+
+---
 
 ```{r}
 library(tidyverse)
