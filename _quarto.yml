@@ -33,7 +33,7 @@ book:
       - bw/soloproject.qmd
       - bw/exam1.qmd
       - bw/exam2.qmd
-      - bww/examcheatsheet.qmd
+      # - bw/examcheatsheet.qmd
 
 
     - part: "In-class Activities"
@@ -69,7 +69,7 @@ format:
 
 execute:
   cache: false
-  freeze: auto
+  freeze: false
   echo: true
   warning: false
   error: false
