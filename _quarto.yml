@@ -34,11 +34,15 @@ book:
       - bw/Exam1.qmd
       - bw/Exam2.qmd
      
-   - part: "Summary Sheet"
+ 
+ 
+    - part: "Summary Sheet"
       chapters: 
         - ss/Exam_1_cheatsheet.qmd
         - ss/Exam_2_cheatsheet.qmd
 
+ 
+ 
     - part: "In-class Activities"
       chapters: 
        - ica/ica-uni.qmd
