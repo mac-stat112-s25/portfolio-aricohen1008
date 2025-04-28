@@ -1,0 +1,6 @@
+---
+title: "Exam_2_cheatsheet"
+format: html
+---
+
+*Cheat Sheet* for Exam 2 ![](..IMG_8536.jpg)
