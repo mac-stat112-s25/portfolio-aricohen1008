@@ -98,6 +98,9 @@ labs(
 
 
 ```{r}
+#| fig-height: 22
+#| fig-width: 11
+
 ne_countries(returnclass = "sf") |> 
   select(name, geometry) |>
   mutate(name = ifelse(name == "United States of America", "USA", name)) |>
@@ -115,7 +118,7 @@ ne_countries(returnclass = "sf") |>
                values_to = "consumption") |>
   ggplot() + 
   geom_sf(aes(fill = consumption)) + 
-  facet_wrap(~food_category) + 
+  facet_wrap(~food_category, ncol =  2) + 
   theme(legend.position = "bottom")
   
 ```
